@@ -14,10 +14,6 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
-
-    private void Update()
-    {
         score1Text.text = $"{scorePlayer1}";
         score2Text.text = $"{scorePlayer2}";
     }
@@ -33,5 +29,8 @@ public class ScoreManager : MonoBehaviour
         {
             scorePlayer2++;
         }
+
+        score1Text.text = $"{scorePlayer1}";
+        score2Text.text = $"{scorePlayer2}";
     }
 }
