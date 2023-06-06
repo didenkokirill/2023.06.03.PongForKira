@@ -47,6 +47,7 @@ public class MoveBall : MonoBehaviour
             direction.y = -direction.y;
         }
     }
+
     public void ResetCoord()
     {
         transform.position = Vector3.zero;

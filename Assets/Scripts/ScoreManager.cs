@@ -8,8 +8,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int scorePlayer1;
     [SerializeField] private int scorePlayer2;
 
-    [SerializeField] TMP_Text score1Text;
-    [SerializeField] TMP_Text score2Text;
+    [SerializeField] private TMP_Text score1Text;
+    [SerializeField] private TMP_Text score2Text;
 
     private void Awake()
     {
