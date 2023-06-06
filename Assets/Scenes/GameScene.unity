@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 1063553183}
   - component: {fileID: 1063553187}
   - component: {fileID: 1063553186}
+  - component: {fileID: 1063553188}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -813,6 +814,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1063553188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063553182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec711b6692fd974c8f7665b528a82cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1063553184}
+  playerStability: 0
 --- !u!1 &1082966024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,8 +1109,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scorePlayer1: 0
   scorePlayer2: 0
+  scoreForWin: 5
   score1Text: {fileID: 2053856082}
   score2Text: {fileID: 1243816064}
+  resultsText: {fileID: 0}
 --- !u!4 &1235812315
 Transform:
   m_ObjectHideFlags: 0
@@ -1417,6 +1434,7 @@ GameObject:
   - component: {fileID: 1486506922}
   - component: {fileID: 1486506921}
   - component: {fileID: 1486506920}
+  - component: {fileID: 1486506925}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -1579,6 +1597,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486506925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486506919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec711b6692fd974c8f7665b528a82cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1486506923}
+  playerStability: 0
 --- !u!1 &1788007832
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,9 +25,9 @@ public class MoveBall : MonoBehaviour
     {
          rigidBody.velocity = direction.normalized * currentSpeed;
 
-         if (Input.anyKey)
+        if (Input.anyKey)
         {
-             Time.timeScale = 1;
+            Time.timeScale = 1;
         }
     }
 
@@ -45,7 +45,7 @@ public class MoveBall : MonoBehaviour
         if (collision.gameObject.CompareTag("BottomWall"))
         {
             direction.y = -direction.y;
-        }
+        }      
     }
 
     public void ResetCoord()
