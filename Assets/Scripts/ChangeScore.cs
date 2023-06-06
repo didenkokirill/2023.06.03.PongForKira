@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChangeScore : MonoBehaviour
 {
-    [SerializeField, Range(1f, 2f)] private int playerID;
+    [SerializeField, Range(1, 2)] private int playerID;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
