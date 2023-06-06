@@ -2,16 +2,13 @@ using UnityEngine;
 
 public class MoveBall : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rigidBody;
-    [SerializeField] new Transform transform;
-
     public static MoveBall Instance;
+
+    [SerializeField] Rigidbody2D rigidBody;
 
     [SerializeField] private Vector2 direction;
 
-    [SerializeField] private float baseSpeed;
-    public float currentSpeed;
-    [SerializeField] private float scaleSpeed;
+    [SerializeField] private float baseSpeed = 3f, currentSpeed, scaleSpeed = 1.1f;
 
     private void Awake()
     {
@@ -21,16 +18,19 @@ public class MoveBall : MonoBehaviour
     private void Start()
     {
         currentSpeed = baseSpeed;
-        direction = new Vector2(Random.Range(0.5f, 1), Random.Range(0.5f, 1));
-        
+        direction = new Vector2(Random.Range(0.5f, 1), Random.Range(0.5f, 1));   
     }
-    void Update()
-    {
-        rigidBody.velocity = direction.normalized * currentSpeed;
 
-        if (Input.anyKey)
-            Time.timeScale = 1;
+    private void Update()
+    {
+         rigidBody.velocity = direction.normalized * currentSpeed;
+
+         if (Input.anyKey)
+        {
+             Time.timeScale = 1;
+        }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -56,8 +56,6 @@ public class MoveBall : MonoBehaviour
         if (!Input.anyKey)
         {
             Time.timeScale = 0;
-
         }
-
     }
 }

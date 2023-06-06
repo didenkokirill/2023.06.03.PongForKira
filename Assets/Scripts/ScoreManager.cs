@@ -5,8 +5,8 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
-    public int scorePlayer1;
-    public int scorePlayer2;
+    [SerializeField] private int scorePlayer1;
+    [SerializeField] private int scorePlayer2;
 
     [SerializeField] TMP_Text score1Text;
     [SerializeField] TMP_Text score2Text;
@@ -20,12 +20,12 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int player)
     {
-        if (player == 1) 
+        if (player == 1)
         {
             scorePlayer1++;
         }
 
-        if (player == 2)
+        else if (player == 2)
         {
             scorePlayer2++;
         }
