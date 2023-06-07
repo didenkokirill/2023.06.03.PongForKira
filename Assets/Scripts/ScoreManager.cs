@@ -5,11 +5,9 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
-    public int scorePlayer1;
-    public int scorePlayer2;
+    [SerializeField] private int scorePlayer1, scorePlayer2, ScoreForWin = 5;
 
-    [SerializeField] TMP_Text score1Text;
-    [SerializeField] TMP_Text score2Text;
+    [SerializeField] TMP_Text score1Text, score2Text, resultsText;
 
     private void Awake()
     {
@@ -28,10 +26,19 @@ public class ScoreManager : MonoBehaviour
         {
             scorePlayer1++;
         }
-
         if (player == 2)
         {
             scorePlayer2++;
+        }
+        if (scorePlayer1 >= ScoreForWin)
+        {
+            resultsText.text = "Player 1 Win";
+            DisplayButton.Instanse.Display();
+        }
+        if (scorePlayer2 >= ScoreForWin)
+        {
+            resultsText.text = "Player 2 Win";
+            DisplayButton.Instanse.Display();
         }
     }
 }

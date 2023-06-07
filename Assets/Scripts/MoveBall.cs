@@ -7,7 +7,7 @@ public class MoveBall : MonoBehaviour
     [SerializeField] Rigidbody2D rigidBody;
 
     [SerializeField] private Vector2 direction;
-    [SerializeField] private bool paused = false;
+    [SerializeField] public bool paused = false;
 
     [SerializeField] private float baseSpeed = 3f, currentSpeed, scaleSpeed = 1.1f;
 
@@ -52,6 +52,7 @@ public class MoveBall : MonoBehaviour
 
     public void ResetCoord()
     {
+        Debug.Log("ResetCoord");
         transform.position = Vector3.zero;
         currentSpeed = baseSpeed;
         direction = new Vector2(Random.Range(0.5f, 1), Random.Range(0.5f, 1));
