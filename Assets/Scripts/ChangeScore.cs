@@ -8,7 +8,6 @@ public class ChangeScore : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            Debug.Log("Trigger");
             ScoreManager.Instance.AddScore(playerID);
             MoveBall.Instance.ResetCoord();
         }
