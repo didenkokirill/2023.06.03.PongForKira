@@ -8,12 +8,11 @@ public class MoveBall : MonoBehaviour
 
     [SerializeField] private Vector2 direction;
 
+    [SerializeField] public bool paused = false;
+
     [SerializeField] private float baseSpeed = 3f, currentSpeed, scaleSpeed = 1.1f;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    private void Awake() => Instance = this;
 
     private void Start()
     {
@@ -23,11 +22,12 @@ public class MoveBall : MonoBehaviour
 
     private void Update()
     {
-         rigidBody.velocity = direction.normalized * currentSpeed;
+        rigidBody.velocity = direction.normalized * currentSpeed;
 
-        if (Input.anyKey)
+        if (paused & Input.anyKeyDown) 
         {
             Time.timeScale = 1;
+            paused = false;
         }
     }
 
@@ -38,11 +38,11 @@ public class MoveBall : MonoBehaviour
             direction.x = -direction.x;
             currentSpeed *= scaleSpeed;
         }
-        if (collision.gameObject.CompareTag("TopWall"))
+        else if (collision.gameObject.CompareTag("TopWall"))
         {
             direction.y = -direction.y;
         }
-        if (collision.gameObject.CompareTag("BottomWall"))
+        else if (collision.gameObject.CompareTag("BottomWall"))
         {
             direction.y = -direction.y;
         }      
@@ -53,10 +53,8 @@ public class MoveBall : MonoBehaviour
         transform.position = Vector3.zero;
         currentSpeed = baseSpeed;
         direction = new Vector2(Random.Range(0.5f, 1), Random.Range(0.5f, 1));
-
-        if (!Input.anyKey)
-        {
-            Time.timeScale = 0;
-        }
+        
+        Time.timeScale = 0;
+        paused = true;       
     }
 }

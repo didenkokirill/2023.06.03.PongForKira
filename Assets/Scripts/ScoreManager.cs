@@ -5,13 +5,14 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
-    [SerializeField] private int scorePlayer1, scorePlayer2;
+    [SerializeField] private int scorePlayer1, scorePlayer2, ScoreForWin = 5;
 
-    [SerializeField] private TMP_Text score1Text, score2Text;
+    [SerializeField] TMP_Text score1Text, score2Text, resultsText;
 
-    private void Awake()
+    private void Awake() => Instance = this;
+    
+    private void Update()
     {
-        Instance = this;
         score1Text.text = $"{scorePlayer1}";
         score2Text.text = $"{scorePlayer2}";
     }
@@ -25,6 +26,17 @@ public class ScoreManager : MonoBehaviour
         else if (player == 2)
         {
             scorePlayer2++;
+        }
+
+        if (scorePlayer1 >= ScoreForWin)
+        {
+            resultsText.text = "Player 1 Win";
+            DisplayButton.Instanse.Display();
+        }
+        else if (scorePlayer2 >= ScoreForWin)
+        {
+            resultsText.text = "Player 2 Win";
+            DisplayButton.Instanse.Display();
         }
 
         score1Text.text = $"{scorePlayer1}";

@@ -9,8 +9,7 @@ public class ChangeScore : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             ScoreManager.Instance.AddScore(playerID);
-
             MoveBall.Instance.ResetCoord();
-        }        
+        }
     }
 }
