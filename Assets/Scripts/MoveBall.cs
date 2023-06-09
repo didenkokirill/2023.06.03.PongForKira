@@ -35,16 +35,12 @@ public class MoveBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            direction.x = -direction.x;
+            direction.y = -direction.y;
             currentSpeed *= scaleSpeed;
         }
-        else if (collision.gameObject.CompareTag("TopWall"))
+        else if (collision.gameObject.CompareTag("SideWall"))
         {
-            direction.y = -direction.y;
-        }
-        else if (collision.gameObject.CompareTag("BottomWall"))
-        {
-            direction.y = -direction.y;
+            direction.x = -direction.x;
         }      
     }
 
