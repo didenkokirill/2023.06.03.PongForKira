@@ -33,8 +33,7 @@ public class ScoreManager : MonoBehaviour
             resultsText.text = "Player 1 Win";
             DisplayButton.Instanse.Display();
         }
-
-        else (scorePlayer2 >= ScoreForWin)
+        else if (scorePlayer2 >= ScoreForWin)
         {
             resultsText.text = "Player 2 Win";
             DisplayButton.Instanse.Display();
