@@ -7,12 +7,12 @@ public class MoveBall : MonoBehaviour
     [SerializeField] Rigidbody2D rigidBody;
 
     [SerializeField] private Vector2 direction;
+
     [SerializeField] public bool paused = false;
 
     [SerializeField] private float baseSpeed = 3f, currentSpeed, scaleSpeed = 1.1f;
 
     private void Awake() => Instance = this;
-
 
     private void Start()
     {

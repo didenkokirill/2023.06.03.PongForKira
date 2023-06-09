@@ -20,12 +20,11 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int player)
     {
-        if (player == 1) 
+        if (player == 1)
         {
             scorePlayer1++;
         }
-
-        if (player == 2)
+        else if (player == 2)
         {
             scorePlayer2++;
         }
@@ -41,5 +40,8 @@ public class ScoreManager : MonoBehaviour
             resultsText.text = "Player 2 Win";
             DisplayButton.Instanse.Display();
         }
+
+        score1Text.text = $"{scorePlayer1}";
+        score2Text.text = $"{scorePlayer2}";
     }
 }
