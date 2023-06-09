@@ -10,8 +10,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TMP_Text score1Text, score2Text, resultsText;
 
     private void Awake() => Instance = this;
-
-
+    
     private void Update()
     {
         score1Text.text = $"{scorePlayer1}";
@@ -35,7 +34,7 @@ public class ScoreManager : MonoBehaviour
             DisplayButton.Instanse.Display();
         }
 
-        if (scorePlayer2 >= ScoreForWin)
+        else (scorePlayer2 >= ScoreForWin)
         {
             resultsText.text = "Player 2 Win";
             DisplayButton.Instanse.Display();

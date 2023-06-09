@@ -53,7 +53,7 @@ public class MoveBall : MonoBehaviour
         transform.position = Vector3.zero;
         currentSpeed = baseSpeed;
         direction = new Vector2(Random.Range(0.5f, 1), Random.Range(0.5f, 1));
-
+        
         Time.timeScale = 0;
         paused = true;       
     }
