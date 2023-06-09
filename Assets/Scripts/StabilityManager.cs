@@ -6,10 +6,13 @@ public class StabilityManager : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private Sprite[] sprites;
+
     [SerializeField] private int destability;
 
-    [SerializeField] private Sprite[] sprites;
-    int min = 0, max = 3, difference = 3, spriteInOrder = 1;
+    [Range(0, 8)] int spriteInOrder = 1;
+    int min = 0, max = 5, difference = 5;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
@@ -18,14 +21,14 @@ public class StabilityManager : MonoBehaviour
 
             for (int i = 0; i < 8; i++)
             {
-
                 if (Enumerable.Range(min, max).Contains(destability))
                 {
-                    Debug.Log($"min {min},max {max}, i {i}");
                     spriteRenderer.sprite = sprites[spriteInOrder];
+                    spriteInOrder++;
+
                     min += difference;
                     max += difference;
-                    spriteInOrder++;
+
                     break;
                 }
             }
