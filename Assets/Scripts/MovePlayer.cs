@@ -9,9 +9,10 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private KeyCode left;
     [SerializeField] private KeyCode right;
 
-    void Update()
+    private void Update()
     {
         Vector2 direction = Vector2.zero;
+
         if (Input.GetKey(left))
         {
             direction = Vector2.left;
@@ -21,6 +22,7 @@ public class MovePlayer : MonoBehaviour
         { 
             direction = Vector2.right; 
         }
+
         rigidBody.velocity = direction * speed;
     }   
 }
