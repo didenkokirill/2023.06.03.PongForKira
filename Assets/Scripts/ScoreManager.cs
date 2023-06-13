@@ -31,12 +31,12 @@ public class ScoreManager : MonoBehaviour
         if (scorePlayer1 >= ScoreForWin)
         {
             resultsText.text = "Player 1 Win";
-            DisplayButton.Instanse.Display();
+            DisplayButton.Instanse.DisplayEndGame();
         }
         else if (scorePlayer2 >= ScoreForWin)
         {
             resultsText.text = "Player 2 Win";
-            DisplayButton.Instanse.Display();
+            DisplayButton.Instanse.DisplayEndGame();
         }
 
         score1Text.text = $"{scorePlayer1}";

@@ -41,7 +41,11 @@ public class MoveBall : MonoBehaviour
         else if (collision.gameObject.CompareTag("SideWall"))
         {
             direction.x = -direction.x;
-        }      
+        }
+        else if (collision.gameObject.CompareTag("TopWall"))
+        {
+            direction.y = -direction.y;
+        }
     }
 
     public void ResetCoord()

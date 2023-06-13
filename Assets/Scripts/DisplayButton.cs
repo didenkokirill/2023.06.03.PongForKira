@@ -4,12 +4,12 @@ public class DisplayButton : MonoBehaviour
 {
     public static DisplayButton Instanse;
   
-    [SerializeField] private GameObject buttons;
+    [SerializeField] private GameObject buttonsEndGame;
 
     private void Awake() => Instanse = this;
 
-    public void Display()
+    public void DisplayEndGame()
     {
-        buttons.SetActive(true);
+        buttonsEndGame.SetActive(true);
     }
 }
