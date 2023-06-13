@@ -11,7 +11,7 @@ public class StabilityManager : MonoBehaviour
     [SerializeField] private int destability;
 
     public int spriteInOrder = 1;
-    public int min = 0, max = 5, difference = 5;
+    public int conversion = 0, difference = 5;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,16 +19,13 @@ public class StabilityManager : MonoBehaviour
         {  
             destability++;
 
-            if (Enumerable.Range(min, max).Contains(destability))
+            if (destability >= conversion)
             {
                 spriteRenderer.sprite = sprites[spriteInOrder];
                 spriteInOrder++;
 
-                min += difference;
-                max += difference;
+                conversion += difference;
             }
-
-
         }        
     }
 }
