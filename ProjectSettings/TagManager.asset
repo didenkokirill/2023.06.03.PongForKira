@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TopWall
-  - BottomWall
   - Ball
+  - SideWall
   layers:
   - Default
   - TransparentFX
