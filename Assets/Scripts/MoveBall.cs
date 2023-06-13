@@ -40,12 +40,21 @@ public class MoveBall : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("TopWall"))
         {
+<<<<<<< Updated upstream
             direction.y = -direction.y;
         }
         else if (collision.gameObject.CompareTag("BottomWall"))
         {
             direction.y = -direction.y;
         }      
+=======
+            direction.x = -direction.x;
+        }
+        else if (collision.gameObject.CompareTag("TopWall")) //for train mode
+        {
+            direction.y = -direction.y;
+        }
+>>>>>>> Stashed changes
     }
 
     public void ResetCoord()
