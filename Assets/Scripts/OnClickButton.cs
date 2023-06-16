@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class OnClickButton : MonoBehaviour
 {
-    [SerializeField] private GameObject ai, player2, topWall, buttons;
+    [SerializeField] private GameObject ai, player2, topWall, buttonsStartGame;
 
     public void OnClickRestart()
     {
@@ -31,11 +31,11 @@ public class OnClickButton : MonoBehaviour
         topWall.SetActive(true);
     }
 
-    private void SetAI(bool isAI, bool isPLayer2, bool isButtons)
+    private void SetAI(bool isAI, bool isPLayer2, bool isButtonsStartGame)
     {
         ai.SetActive(isAI);
         player2.SetActive(isPLayer2);
-        buttons.SetActive(isButtons);
+        buttonsStartGame.SetActive(isButtonsStartGame);
         Time.timeScale = 1;
     }
 }

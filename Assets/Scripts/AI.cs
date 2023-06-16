@@ -5,32 +5,24 @@ public class AI : MonoBehaviour
     [SerializeField] private Transform ball;
     [SerializeField] private Transform self;
 
-    [SerializeField] Rigidbody2D rigidBody;
+    [SerializeField] private Rigidbody2D rigidBody;
 
     [SerializeField] private float speed = 5;
-    [SerializeField] private int difficult = 5; //control AI bezumie
 
     private Vector2 direction;
 
-    private int frame;
-
-    private void Update()
+    private void FixedUpdate()
     {
-        frame++;
-    
-        if (frame >= difficult) //for controll AI speed, try set difficult = 0
+        Vector2 direction = Vector2.zero;
+
+        if (ball.position.x < self.position.x - 0.1f)
         {
-            if (ball.position.x < self.position.x)
-            {
-                direction = Vector2.left;
-            }
+            direction = Vector2.left;
+        }
 
-            if (ball.position.x > self.position.x)
-            {
-                direction = Vector2.right;
-            }
-
-            frame = 0;
+        else if (ball.position.x > self.position.x + 0.1f)
+        {
+            direction = Vector2.right;
         }
 
         rigidBody.velocity = direction * speed;

@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TMP_Text score1Text, score2Text, resultsText;
 
     private void Awake() => Instance = this;
-    
+
     private void Update()
     {
         score1Text.text = $"{scorePlayer1}";
